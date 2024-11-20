@@ -41,11 +41,11 @@ public class ServerskiOdgovor implements Serializable {
         this.odgovor = odgovor;
     }
 
-    public Exception getExc() {
+    public Exception getException() {
         return exc;
     }
 
-    public void setExc(Exception exc) {
+    public void setException(Exception exc) {
         this.exc = exc;
     }
     
