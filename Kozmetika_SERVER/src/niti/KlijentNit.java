@@ -4,11 +4,14 @@
  */
 package niti;
 
+import domen.Administrator;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
+import kontroler.ServerKontroler;
 import transfer.KlijentskiZahtev;
 import transfer.ServerskiOdgovor;
+import transfer.util.Operacije;
 import transfer.util.StatusOdgovora;
 
 /**
@@ -41,7 +44,13 @@ public class KlijentNit extends Thread {
         ServerskiOdgovor odgovor = new ServerskiOdgovor(null, null, StatusOdgovora.Success);
         try {
               switch (zahtev.getOperacija()) {
-               
+               case Operacije.LOGIN:
+                    Administrator administrator = (Administrator) zahtev.getParametar();
+                    Administrator ulogovani = ServerKontroler.getInstance().login(administrator);
+                    odgovor.setOdgovor(ulogovani);
+                    break;
+                 default:
+                    return null;
             }
         } catch (Exception e) {
              odgovor.setStatusOdgovora(StatusOdgovora.Error);

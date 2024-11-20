@@ -7,6 +7,7 @@ package kontroler;
 import domen.Administrator;
 import java.util.ArrayList;
 import java.util.List;
+import so.login.SOLogin;
 
 /**
  *
@@ -25,4 +26,16 @@ public class ServerKontroler {
         }
         return instance;
     }
+
+    public Administrator login(Administrator administrator) throws Exception  {
+        SOLogin so = new SOLogin();
+        so.templateExecute(administrator);
+        return so.getUlogovani();
+    }
+
+    public List<Administrator> getUlogovaniAdministratori() {
+        return ulogovaniAdministratori;
+    }
+    
+    
 }

@@ -4,6 +4,7 @@
  */
 package domen;
 
+import java.io.Serializable;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -12,7 +13,7 @@ import java.util.ArrayList;
  *
  * @author Milena
  */
-public abstract class OpstiDomenskiObjekat {
+public abstract class OpstiDomenskiObjekat implements Serializable{
     public abstract String nazivTabele();
     public abstract String alijas();
     public abstract String join();
