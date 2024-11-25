@@ -5,6 +5,7 @@
 package niti;
 
 import domen.Administrator;
+import domen.Kupac;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
@@ -44,7 +45,43 @@ public class KlijentNit extends Thread {
         ServerskiOdgovor odgovor = new ServerskiOdgovor(null, null, StatusOdgovora.Success);
         try {
               switch (zahtev.getOperacija()) {
-               case Operacije.LOGIN:
+                case Operacije.ADD_KUPAC:
+                    ServerKontroler.getInstance().addKupac((Kupac) zahtev.getParametar());
+                    break;
+               /* case Operation.ADD_PORUDZBINA:
+                    ServerController.getInstance().addPorudzbina((Porudzbina) request.getData());
+                    break;*/
+                case Operacije.DELETE_KUPAC:
+                    ServerKontroler.getInstance().deleteKupac((Kupac) zahtev.getParametar());
+                    break;
+                /*case Operation.DELETE_PORUDZBINA:
+                    ServerController.getInstance().deletePorudzbina((Porudzbina) request.getData());
+                    break;*/
+                case Operacije.UPDATE_KUPAC:
+                    ServerKontroler.getInstance().updateKupac((Kupac) zahtev.getParametar());
+                    break;
+               /* case Operation.UPDATE_PORUDZBINA:
+                    ServerController.getInstance().updatePorudzbina((Porudzbina) request.getData());
+                    break;*/
+                /*case Operation.GET_ALL_ADMINISTRATOR:
+                    response.setData(ServerController.getInstance().getAllAdministrator());
+                    break;*/
+                case Operacije.GET_ALL_KUPAC:
+                    odgovor.setOdgovor(ServerKontroler.getInstance().getAllKupac());
+                    break;
+               /* case Operation.GET_ALL_PORUDZBINA:
+                    response.setData(ServerController.getInstance().getAllPorudzbina());
+                    break;*/
+               /* case Operation.GET_ALL_PROIZVOD:
+                    response.setData(ServerController.getInstance().getAllProizvod());
+                    break;*/
+               /* case Operation.GET_ALL_STAVKA_PORUDZBINE:
+                    response.setData(ServerController.getInstance().getAllStavkaPorudzbine((Porudzbina) request.getData()));
+                    break;*/
+                /*case Operation.GET_ALL_TIP_PROIZVODA:
+                    response.setData(ServerController.getInstance().getAllTipProizvoda());
+                    break;*/
+                case Operacije.LOGIN:
                     Administrator administrator = (Administrator) zahtev.getParametar();
                     Administrator ulogovani = ServerKontroler.getInstance().login(administrator);
                     odgovor.setOdgovor(ulogovani);
