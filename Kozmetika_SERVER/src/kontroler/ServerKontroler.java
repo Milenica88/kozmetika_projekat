@@ -16,6 +16,7 @@ import so.kupac.SODeleteKupac;
 import so.kupac.SOGetAllKupac;
 import so.kupac.SOUpdateKupac;
 import so.login.SOLogin;
+import so.porudzbina.SOAddPorudzbina;
 import so.porudzbina.SODeletePorudzbina;
 import so.porudzbina.SOGetAllPorudzbina;
 import so.porudzbina.SOUpdatePorudzbina;
@@ -53,6 +54,10 @@ public class ServerKontroler {
 
     public void addKupac(Kupac kupac) throws Exception {
         (new SOAddKupac()).templateExecute(kupac);
+    }
+
+    public void addPorudzbina(Porudzbina porudzbina) throws Exception {
+        (new SOAddPorudzbina()).templateExecute(porudzbina);
     }
 
     public void deleteKupac(Kupac kupac) throws Exception {

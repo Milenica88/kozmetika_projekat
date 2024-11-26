@@ -50,9 +50,9 @@ public class KlijentNit extends Thread {
                 case Operacije.ADD_KUPAC:
                     ServerKontroler.getInstance().addKupac((Kupac) zahtev.getParametar());
                     break;
-                /* case Operation.ADD_PORUDZBINA:
-                    ServerController.getInstance().addPorudzbina((Porudzbina) request.getData());
-                    break;*/
+                case Operacije.ADD_PORUDZBINA:
+                    ServerKontroler.getInstance().addPorudzbina((Porudzbina) zahtev.getParametar());
+                    break;
                 case Operacije.DELETE_KUPAC:
                     ServerKontroler.getInstance().deleteKupac((Kupac) zahtev.getParametar());
                     break;

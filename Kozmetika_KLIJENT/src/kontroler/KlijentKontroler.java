@@ -44,6 +44,10 @@ public class KlijentKontroler {
         posaljiZahtev(Operacije.ADD_KUPAC, kupac);
     }
 
+    public void addPorudzbina(Porudzbina porudzbina) throws Exception {
+        posaljiZahtev(Operacije.ADD_PORUDZBINA, porudzbina);
+    }
+
     public void deleteKupac(Kupac kupac) throws Exception {
         posaljiZahtev(Operacije.DELETE_KUPAC, kupac);
     }
