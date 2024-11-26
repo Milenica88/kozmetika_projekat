@@ -6,12 +6,16 @@ package forme;
 
 import domen.Administrator;
 import domen.Kupac;
+import domen.Proizvod;
 import formeKupca.FrmNoviKupac;
 import formeKupca.FrmPretragaKupca;
+import formePorudzbine.FrmPretragaPorudzbine;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import kontroler.KlijentKontroler;
+import modeli.TabelaModelStavke;
 import session.Session;
 
 /**
@@ -21,16 +25,22 @@ import session.Session;
 public class GlavnaForma extends javax.swing.JFrame {
 
     Administrator ulogovani;
+    double ukupnaCena;
 
     /**
      * Creates new form GlavnaForma
      */
     public GlavnaForma() {
-        initComponents(); this.ulogovani = Session.getInstance().getUlogovani();
+        initComponents();
+        this.ulogovani = Session.getInstance().getUlogovani();
         txtUlogovani.setText(ulogovani.toString());
         setTitle("Klijentska forma");
         popuniKupce();
-        
+        popuniProizvode();
+        txtUkupnaCena.setEditable(false);
+        txtCenaStavke.setEditable(false);
+        tblStavke.setModel(new TabelaModelStavke());
+
     }
 
     /**
@@ -55,7 +65,7 @@ public class GlavnaForma extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        cbProizvodi = new javax.swing.JComboBox<>();
+        cbProizvodi = new javax.swing.JComboBox();
         txtKolicina = new javax.swing.JTextField();
         txtCenaStavke = new javax.swing.JTextField();
         btnDodajStavku = new javax.swing.JButton();
@@ -68,9 +78,9 @@ public class GlavnaForma extends javax.swing.JFrame {
         miNoviKupac = new javax.swing.JMenuItem();
         miPretragaKupca = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
-        jMenuItem3 = new javax.swing.JMenuItem();
+        miPretragaPorudzbine = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
-        jMenuItem4 = new javax.swing.JMenuItem();
+        miOdjava = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -100,7 +110,7 @@ public class GlavnaForma extends javax.swing.JFrame {
         jLabel7.setText("Cena stavke (din):");
 
         cbProizvodi.setBackground(new java.awt.Color(204, 204, 204));
-        cbProizvodi.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cbProizvodi.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         btnDodajStavku.setText("Dodaj stavku");
 
@@ -252,16 +262,36 @@ public class GlavnaForma extends javax.swing.JFrame {
         jMenuBar1.add(jMenu1);
 
         jMenu2.setText("Porudžbina");
+        jMenu2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenu2ActionPerformed(evt);
+            }
+        });
 
-        jMenuItem3.setText("Pretraga porudžbine");
-        jMenu2.add(jMenuItem3);
+        miPretragaPorudzbine.setText("Pretraga porudžbine");
+        miPretragaPorudzbine.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                miPretragaPorudzbineActionPerformed(evt);
+            }
+        });
+        jMenu2.add(miPretragaPorudzbine);
 
         jMenuBar1.add(jMenu2);
 
         jMenu3.setText("Odjava");
+        jMenu3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenu3ActionPerformed(evt);
+            }
+        });
 
-        jMenuItem4.setText("Odjavi sa sistema");
-        jMenu3.add(jMenuItem4);
+        miOdjava.setText("Odjavi sa sistema");
+        miOdjava.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                miOdjavaActionPerformed(evt);
+            }
+        });
+        jMenu3.add(miOdjava);
 
         jMenuBar1.add(jMenu3);
 
@@ -299,12 +329,38 @@ public class GlavnaForma extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void miPretragaKupcaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miPretragaKupcaActionPerformed
-       new FrmPretragaKupca(this, true).setVisible(true);
+        new FrmPretragaKupca(this, true).setVisible(true);
     }//GEN-LAST:event_miPretragaKupcaActionPerformed
 
     private void miNoviKupacActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miNoviKupacActionPerformed
-         new FrmNoviKupac(this, true).setVisible(true);
+        new FrmNoviKupac(this, true).setVisible(true);
     }//GEN-LAST:event_miNoviKupacActionPerformed
+
+    private void jMenu2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu2ActionPerformed
+
+    }//GEN-LAST:event_jMenu2ActionPerformed
+
+    private void jMenu3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu3ActionPerformed
+
+    }//GEN-LAST:event_jMenu3ActionPerformed
+
+    private void miPretragaPorudzbineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miPretragaPorudzbineActionPerformed
+        new FrmPretragaPorudzbine(this, true).setVisible(true);
+    }//GEN-LAST:event_miPretragaPorudzbineActionPerformed
+
+    private void miOdjavaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miOdjavaActionPerformed
+        int result = JOptionPane.showConfirmDialog(this, "Da li ste sigurni da zelite da "
+                + "se odjavite sa sistema?", "Konfirmacija", JOptionPane.YES_NO_OPTION);
+
+        if (result == JOptionPane.NO_OPTION) {
+            return;
+        }
+
+        if (result == JOptionPane.YES_OPTION) {
+            new LoginForma().setVisible(true);
+            this.dispose();
+        }
+    }//GEN-LAST:event_miOdjavaActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -312,7 +368,7 @@ public class GlavnaForma extends javax.swing.JFrame {
     private javax.swing.JButton btnObrisiStavku;
     private javax.swing.JButton btnSacuvaj;
     private javax.swing.JComboBox cbKupci;
-    private javax.swing.JComboBox<String> cbProizvodi;
+    private javax.swing.JComboBox cbProizvodi;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -324,13 +380,13 @@ public class GlavnaForma extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JMenuItem miNoviKupac;
+    private javax.swing.JMenuItem miOdjava;
     private javax.swing.JMenuItem miPretragaKupca;
+    private javax.swing.JMenuItem miPretragaPorudzbine;
     private javax.swing.JTable tblStavke;
     private javax.swing.JTextField txtCenaStavke;
     private javax.swing.JTextField txtDatumIsporuke;
@@ -339,8 +395,23 @@ public class GlavnaForma extends javax.swing.JFrame {
     private javax.swing.JTextField txtUlogovani;
     // End of variables declaration//GEN-END:variables
 
+    private void popuniProizvode() {
+        try {
+            ArrayList<Proizvod> proizvodi = KlijentKontroler.getInstance().getAllProizvod();
+
+            cbProizvodi.removeAllItems();
+
+            for (Proizvod proizvod : proizvodi) {
+                cbProizvodi.addItem(proizvod);
+            }
+
+        } catch (Exception ex) {
+            Logger.getLogger(GlavnaForma.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
     private void popuniKupce() {
-         try {
+        try {
             ArrayList<Kupac> kupci = KlijentKontroler.getInstance().getAllKupac();
 
             cbKupci.removeAllItems();

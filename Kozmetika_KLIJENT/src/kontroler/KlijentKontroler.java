@@ -6,6 +6,9 @@ package kontroler;
 
 import domen.Administrator;
 import domen.Kupac;
+import domen.Porudzbina;
+import domen.Proizvod;
+import domen.StavkaPorudzbine;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
@@ -41,16 +44,36 @@ public class KlijentKontroler {
         posaljiZahtev(Operacije.ADD_KUPAC, kupac);
     }
 
-    public ArrayList<Kupac> getAllKupac() throws Exception {
-        return (ArrayList<Kupac>) posaljiZahtev(Operacije.GET_ALL_KUPAC, null);
-    }
-
     public void deleteKupac(Kupac kupac) throws Exception {
         posaljiZahtev(Operacije.DELETE_KUPAC, kupac);
     }
 
+    public void deletePorudzbina(Porudzbina porudzbina) throws Exception {
+        posaljiZahtev(Operacije.DELETE_PORUDZBINA, porudzbina);
+    }
+
     public void updateKupac(Kupac kupac) throws Exception {
         posaljiZahtev(Operacije.UPDATE_KUPAC, kupac);
+    }
+
+    public void updatePorudzbina(Porudzbina porudzbina) throws Exception {
+        posaljiZahtev(Operacije.UPDATE_PORUDZBINA, porudzbina);
+    }
+
+    public ArrayList<Kupac> getAllKupac() throws Exception {
+        return (ArrayList<Kupac>) posaljiZahtev(Operacije.GET_ALL_KUPAC, null);
+    }
+
+    public ArrayList<Porudzbina> getAllPorudzbina() throws Exception {
+        return (ArrayList<Porudzbina>) posaljiZahtev(Operacije.GET_ALL_PORUDZBINA, null);
+    }
+
+    public ArrayList<Proizvod> getAllProizvod() throws Exception {
+        return (ArrayList<Proizvod>) posaljiZahtev(Operacije.GET_ALL_PROIZVOD, null);
+    }
+
+    public ArrayList<StavkaPorudzbine> getAllStavkaPorudzbine(Porudzbina p) throws Exception {
+        return (ArrayList<StavkaPorudzbine>) posaljiZahtev(Operacije.GET_ALL_STAVKA_PORUDZBINE, p);
     }
 
     private Object posaljiZahtev(int operacija, Object parametar) throws Exception {
