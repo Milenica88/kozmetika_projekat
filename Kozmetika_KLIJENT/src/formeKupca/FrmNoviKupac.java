@@ -64,7 +64,7 @@ public class FrmNoviKupac extends javax.swing.JDialog {
         jLabel4.setText("Email:");
 
         btnOtkazi.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        btnOtkazi.setText("Otkazi");
+        btnOtkazi.setText("Otkaži");
         btnOtkazi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnOtkaziActionPerformed(evt);

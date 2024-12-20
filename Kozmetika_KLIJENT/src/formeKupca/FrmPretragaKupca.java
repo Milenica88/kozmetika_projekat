@@ -75,7 +75,7 @@ public class FrmPretragaKupca extends javax.swing.JDialog {
         ));
         jScrollPane1.setViewportView(tblKupci);
 
-        btnOtkazi.setText("Otkazi");
+        btnOtkazi.setText("Otkaži");
         btnOtkazi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnOtkaziActionPerformed(evt);

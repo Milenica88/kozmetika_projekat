@@ -61,8 +61,8 @@
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" max="-2" attributes="0">
                               <Group type="102" alignment="1" attributes="0">
-                                  <Component id="btnLogin" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Component id="btnLogin" min="-2" pref="79" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Component id="btnCancel" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Component id="txtUsername" alignment="0" max="32767" attributes="0"/>
@@ -126,7 +126,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="btnCancel">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Otkazi"/>
+            <Property name="text" type="java.lang.String" value="Otka&#x17e;i"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCancelActionPerformed"/>

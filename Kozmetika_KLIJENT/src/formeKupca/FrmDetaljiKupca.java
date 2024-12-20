@@ -69,7 +69,7 @@ public class FrmDetaljiKupca extends javax.swing.JDialog {
 
         jLabel4.setText("Email:");
 
-        btnOtkazi.setText("Otkazi");
+        btnOtkazi.setText("Otkaži");
         btnOtkazi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnOtkaziActionPerformed(evt);
@@ -83,7 +83,7 @@ public class FrmDetaljiKupca extends javax.swing.JDialog {
             }
         });
 
-        btnObrisi.setText("Obrisi");
+        btnObrisi.setText("Obriši");
         btnObrisi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnObrisiActionPerformed(evt);

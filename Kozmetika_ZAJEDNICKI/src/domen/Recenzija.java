@@ -101,7 +101,6 @@ public class Recenzija extends OpstiDomenskiObjekat {
         return "";
     }
 
-    // Getteri i setteri
     public Long getRecenzijaID() {
         return recenzijaID;
     }

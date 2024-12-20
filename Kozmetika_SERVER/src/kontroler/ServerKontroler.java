@@ -23,7 +23,6 @@ import so.porudzbina.SOGetAllPorudzbina;
 import so.porudzbina.SOUpdatePorudzbina;
 import so.proizvod.SOGetAllProizvod;
 import so.recenzija.SOAddRecenzija;
-import so.recenzija.SODeleteRecenzija;
 import so.recenzija.SOGetAllRecenzija;
 import so.stavkaPorudzbine.SOGetAllStavkaPorudzbine;
 
@@ -74,10 +73,6 @@ public class ServerKontroler {
 
     public void deletePorudzbina(Porudzbina porudzbina) throws Exception {
         (new SODeletePorudzbina()).templateExecute(porudzbina);
-    }
-
-    public void deleteRecenzija(Recenzija recenzija) throws Exception {
-        (new SODeleteRecenzija()).templateExecute(recenzija);
     }
 
     public void updateKupac(Kupac kupac) throws Exception {

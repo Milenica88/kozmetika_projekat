@@ -60,10 +60,6 @@ public class KlijentKontroler {
     public void deletePorudzbina(Porudzbina porudzbina) throws Exception {
         posaljiZahtev(Operacije.DELETE_PORUDZBINA, porudzbina);
     }
-    
-    public void deleteStatistika(Recenzija recenzija) throws Exception {
-        posaljiZahtev(Operacije.DELETE_RECENZIJA, recenzija);
-    }
 
     public void updateKupac(Kupac kupac) throws Exception {
         posaljiZahtev(Operacije.UPDATE_KUPAC, kupac);

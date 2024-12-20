@@ -63,9 +63,6 @@ public class KlijentNit extends Thread {
                 case Operacije.DELETE_PORUDZBINA:
                     ServerKontroler.getInstance().deletePorudzbina((Porudzbina) zahtev.getParametar());
                     break;
-                case Operacije.DELETE_RECENZIJA:
-                    ServerKontroler.getInstance().deleteRecenzija((Recenzija) zahtev.getParametar());
-                    break;
                 case Operacije.UPDATE_KUPAC:
                     ServerKontroler.getInstance().updateKupac((Kupac) zahtev.getParametar());
                     break;

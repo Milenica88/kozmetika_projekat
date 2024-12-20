@@ -73,7 +73,7 @@ public class FrmDetaljiPorudzbine extends javax.swing.JDialog {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(255, 206, 206));
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Detalji porudzbine", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 14))); // NOI18N
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Detalji porudžbine", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 14))); // NOI18N
         jPanel1.setPreferredSize(new java.awt.Dimension(560, 444));
 
         jLabel1.setText("Klijent:");
@@ -89,14 +89,14 @@ public class FrmDetaljiPorudzbine extends javax.swing.JDialog {
             }
         });
 
-        btnOtkazi.setText("Otkazi porudzbinu");
+        btnOtkazi.setText("Otkaži porudžbinu");
         btnOtkazi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnOtkaziActionPerformed(evt);
             }
         });
 
-        btnIzmeni.setText("Izmeni porudzbinu");
+        btnIzmeni.setText("Izmeni porudžbinu");
         btnIzmeni.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnIzmeniActionPerformed(evt);
@@ -133,7 +133,7 @@ public class FrmDetaljiPorudzbine extends javax.swing.JDialog {
             }
         });
 
-        btnObrisiStavku.setText("Obrisi stavku");
+        btnObrisiStavku.setText("Obriši stavku");
         btnObrisiStavku.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnObrisiStavkuActionPerformed(evt);

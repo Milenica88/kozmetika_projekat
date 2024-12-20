@@ -62,7 +62,7 @@ public class FrmNovaRecenzija extends javax.swing.JDialog {
         jPanel1.setBackground(new java.awt.Color(255, 206, 206));
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Nova Recenzija", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 14))); // NOI18N
 
-        btnSacuvaj.setText("Sacuvaj");
+        btnSacuvaj.setText("Sačuvaj");
         btnSacuvaj.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSacuvajActionPerformed(evt);
