@@ -7,6 +7,7 @@ package niti;
 import domen.Administrator;
 import domen.Kupac;
 import domen.Porudzbina;
+import domen.Recenzija;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
@@ -53,11 +54,17 @@ public class KlijentNit extends Thread {
                 case Operacije.ADD_PORUDZBINA:
                     ServerKontroler.getInstance().addPorudzbina((Porudzbina) zahtev.getParametar());
                     break;
+                case Operacije.ADD_RECENZIJA:
+                    ServerKontroler.getInstance().addRecenzija((Recenzija) zahtev.getParametar());
+                    break;
                 case Operacije.DELETE_KUPAC:
                     ServerKontroler.getInstance().deleteKupac((Kupac) zahtev.getParametar());
                     break;
                 case Operacije.DELETE_PORUDZBINA:
                     ServerKontroler.getInstance().deletePorudzbina((Porudzbina) zahtev.getParametar());
+                    break;
+                case Operacije.DELETE_RECENZIJA:
+                    ServerKontroler.getInstance().deleteRecenzija((Recenzija) zahtev.getParametar());
                     break;
                 case Operacije.UPDATE_KUPAC:
                     ServerKontroler.getInstance().updateKupac((Kupac) zahtev.getParametar());
@@ -79,6 +86,9 @@ public class KlijentNit extends Thread {
                     break;
                 case Operacije.GET_ALL_STAVKA_PORUDZBINE:
                     odgovor.setOdgovor(ServerKontroler.getInstance().getAllStavkaPorudzbine((Porudzbina) zahtev.getParametar()));
+                    break;
+                case Operacije.GET_ALL_RECENZIJA:
+                    odgovor.setOdgovor(ServerKontroler.getInstance().getAllRecenzija());
                     break;
                 /*case Operation.GET_ALL_TIP_PROIZVODA:
                     response.setData(ServerController.getInstance().getAllTipProizvoda());

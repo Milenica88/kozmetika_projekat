@@ -8,6 +8,7 @@ import domen.Administrator;
 import domen.Kupac;
 import domen.Porudzbina;
 import domen.Proizvod;
+import domen.Recenzija;
 import domen.StavkaPorudzbine;
 import java.util.ArrayList;
 import java.util.List;
@@ -21,6 +22,9 @@ import so.porudzbina.SODeletePorudzbina;
 import so.porudzbina.SOGetAllPorudzbina;
 import so.porudzbina.SOUpdatePorudzbina;
 import so.proizvod.SOGetAllProizvod;
+import so.recenzija.SOAddRecenzija;
+import so.recenzija.SODeleteRecenzija;
+import so.recenzija.SOGetAllRecenzija;
 import so.stavkaPorudzbine.SOGetAllStavkaPorudzbine;
 
 /**
@@ -60,12 +64,20 @@ public class ServerKontroler {
         (new SOAddPorudzbina()).templateExecute(porudzbina);
     }
 
+    public void addRecenzija(Recenzija recenzija) throws Exception {
+        (new SOAddRecenzija()).templateExecute(recenzija);
+    }
+
     public void deleteKupac(Kupac kupac) throws Exception {
         (new SODeleteKupac()).templateExecute(kupac);
     }
 
     public void deletePorudzbina(Porudzbina porudzbina) throws Exception {
         (new SODeletePorudzbina()).templateExecute(porudzbina);
+    }
+
+    public void deleteRecenzija(Recenzija recenzija) throws Exception {
+        (new SODeleteRecenzija()).templateExecute(recenzija);
     }
 
     public void updateKupac(Kupac kupac) throws Exception {
@@ -91,6 +103,12 @@ public class ServerKontroler {
     public ArrayList<Proizvod> getAllProizvod() throws Exception {
         SOGetAllProizvod so = new SOGetAllProizvod();
         so.templateExecute(new Proizvod());
+        return so.getLista();
+    }
+
+    public ArrayList<Recenzija> getAllRecenzija() throws Exception {
+        SOGetAllRecenzija so = new SOGetAllRecenzija();
+        so.templateExecute(new Recenzija());
         return so.getLista();
     }
 

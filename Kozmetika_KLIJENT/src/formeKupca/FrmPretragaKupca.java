@@ -5,7 +5,10 @@
 package formeKupca;
 
 import domen.Kupac;
+import formeStatistika.FrmNovaRecenzija;
+import javax.swing.JOptionPane;
 import modeli.TabelaModelKupci;
+
 
 /**
  *
@@ -43,6 +46,7 @@ public class FrmPretragaKupca extends javax.swing.JDialog {
         tblKupci = new javax.swing.JTable();
         btnOtkazi = new javax.swing.JButton();
         btnDetalji = new javax.swing.JButton();
+        btnOcena = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -85,6 +89,13 @@ public class FrmPretragaKupca extends javax.swing.JDialog {
             }
         });
 
+        btnOcena.setText("Oceni proizvod");
+        btnOcena.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnOcenaActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -102,6 +113,8 @@ public class FrmPretragaKupca extends javax.swing.JDialog {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(81, 81, 81)
                 .addComponent(btnOtkazi)
+                .addGap(18, 18, 18)
+                .addComponent(btnOcena)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnDetalji)
                 .addGap(41, 41, 41))
@@ -118,7 +131,8 @@ public class FrmPretragaKupca extends javax.swing.JDialog {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnOtkazi)
-                    .addComponent(btnDetalji))
+                    .addComponent(btnDetalji)
+                    .addComponent(btnOcena))
                 .addContainerGap(37, Short.MAX_VALUE))
         );
 
@@ -154,10 +168,25 @@ public class FrmPretragaKupca extends javax.swing.JDialog {
         this.dispose();
     }//GEN-LAST:event_btnOtkaziActionPerformed
 
+    private void btnOcenaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOcenaActionPerformed
+         TabelaModelKupci mt=(TabelaModelKupci) tblKupci.getModel();
+        int row=tblKupci.getSelectedRow();
+        if(row>=0){
+            JOptionPane.showMessageDialog(this,"Sistem je ucitao kupca");
+            Kupac k=mt.getSelectedKlijent(row);
+            new FrmNovaRecenzija(this, true, k).setVisible(true);
+        }
+        else{
+            JOptionPane.showMessageDialog(this,"Sistem ne moze da ucita kupca");
+        }
+        
+    }//GEN-LAST:event_btnOcenaActionPerformed
+
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnDetalji;
+    private javax.swing.JButton btnOcena;
     private javax.swing.JButton btnOtkazi;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;

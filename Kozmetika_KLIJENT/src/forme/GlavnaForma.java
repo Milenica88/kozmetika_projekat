@@ -12,6 +12,7 @@ import domen.StavkaPorudzbine;
 import formeKupca.FrmNoviKupac;
 import formeKupca.FrmPretragaKupca;
 import formePorudzbine.FrmPretragaPorudzbine;
+import formeStatistika.FrmRecenzija;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -86,6 +87,8 @@ public class GlavnaForma extends javax.swing.JFrame {
         miPretragaPorudzbine = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
         miOdjava = new javax.swing.JMenuItem();
+        jMenu4 = new javax.swing.JMenu();
+        miRecenzija = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -328,6 +331,18 @@ public class GlavnaForma extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu3);
 
+        jMenu4.setText("Recenzije");
+
+        miRecenzija.setText("Pregled");
+        miRecenzija.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                miRecenzijaActionPerformed(evt);
+            }
+        });
+        jMenu4.add(miRecenzija);
+
+        jMenuBar1.add(jMenu4);
+
         setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -491,6 +506,10 @@ public class GlavnaForma extends javax.swing.JFrame {
 
     }//GEN-LAST:event_btnSacuvajActionPerformed
 
+    private void miRecenzijaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miRecenzijaActionPerformed
+        new FrmRecenzija(this, true).setVisible(true);
+    }//GEN-LAST:event_miRecenzijaActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnDodajStavku;
@@ -508,6 +527,7 @@ public class GlavnaForma extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
@@ -516,6 +536,7 @@ public class GlavnaForma extends javax.swing.JFrame {
     private javax.swing.JMenuItem miOdjava;
     private javax.swing.JMenuItem miPretragaKupca;
     private javax.swing.JMenuItem miPretragaPorudzbine;
+    private javax.swing.JMenuItem miRecenzija;
     private javax.swing.JTable tblStavke;
     private javax.swing.JTextField txtCenaStavke;
     private javax.swing.JTextField txtDatumIsporuke;

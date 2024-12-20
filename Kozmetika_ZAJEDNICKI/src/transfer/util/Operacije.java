@@ -9,6 +9,7 @@ package transfer.util;
  * @author Milena
  */
 public interface Operacije {
+
     public static final int LOGIN = 0;
 
     public static final int GET_ALL_ADMINISTRATOR = 1;
@@ -26,6 +27,10 @@ public interface Operacije {
     public static final int GET_ALL_STAVKA_PORUDZBINE = 10;
 
     public static final int GET_ALL_TIP_PROIZVODA = 11;
-    
+
     public static final int GET_ALL_PROIZVOD = 12;
+
+    public static final int GET_ALL_RECENZIJA = 13;
+    public static final int ADD_RECENZIJA = 14;
+    public static final int DELETE_RECENZIJA = 15;
 }

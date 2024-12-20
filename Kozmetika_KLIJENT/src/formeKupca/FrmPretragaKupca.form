@@ -68,6 +68,8 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="81" max="-2" attributes="0"/>
                   <Component id="btnOtkazi" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="btnOcena" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
                   <Component id="btnDetalji" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
@@ -88,6 +90,7 @@
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="btnOtkazi" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="btnDetalji" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnOcena" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="37" max="32767" attributes="0"/>
               </Group>
@@ -137,6 +140,14 @@
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnDetaljiActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="btnOcena">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Oceni proizvod"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnOcenaActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>

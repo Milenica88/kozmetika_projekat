@@ -8,6 +8,7 @@ import domen.Administrator;
 import domen.Kupac;
 import domen.Porudzbina;
 import domen.Proizvod;
+import domen.Recenzija;
 import domen.StavkaPorudzbine;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -48,12 +49,20 @@ public class KlijentKontroler {
         posaljiZahtev(Operacije.ADD_PORUDZBINA, porudzbina);
     }
 
+    public void addRecenzija(Recenzija recenzija) throws Exception {
+        posaljiZahtev(Operacije.ADD_RECENZIJA, recenzija);
+    }
+
     public void deleteKupac(Kupac kupac) throws Exception {
         posaljiZahtev(Operacije.DELETE_KUPAC, kupac);
     }
 
     public void deletePorudzbina(Porudzbina porudzbina) throws Exception {
         posaljiZahtev(Operacije.DELETE_PORUDZBINA, porudzbina);
+    }
+    
+    public void deleteStatistika(Recenzija recenzija) throws Exception {
+        posaljiZahtev(Operacije.DELETE_RECENZIJA, recenzija);
     }
 
     public void updateKupac(Kupac kupac) throws Exception {
@@ -78,6 +87,10 @@ public class KlijentKontroler {
 
     public ArrayList<StavkaPorudzbine> getAllStavkaPorudzbine(Porudzbina p) throws Exception {
         return (ArrayList<StavkaPorudzbine>) posaljiZahtev(Operacije.GET_ALL_STAVKA_PORUDZBINE, p);
+    }
+
+    public ArrayList<Recenzija> getAllRecenzija() throws Exception {
+        return (ArrayList<Recenzija>) posaljiZahtev(Operacije.GET_ALL_RECENZIJA,null);
     }
 
     private Object posaljiZahtev(int operacija, Object parametar) throws Exception {
