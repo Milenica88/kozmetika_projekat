@@ -8,13 +8,13 @@ import db.DBBroker;
 import domen.OpstiDomenskiObjekat;
 import domen.StavkaPorudzbine;
 import java.util.ArrayList;
-import so.AbstractSO;
+import so.OpstaSO;
 
 /**
  *
  * @author Milena
  */
-public class SOGetAllStavkaPorudzbine extends AbstractSO {
+public class SOGetAllStavkaPorudzbine extends OpstaSO {
      private ArrayList<StavkaPorudzbine> listaStavkiPor;
 
     @Override

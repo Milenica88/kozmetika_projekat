@@ -7,14 +7,14 @@ package so.recenzija;
 import db.DBBroker;
 import domen.OpstiDomenskiObjekat;
 import domen.Recenzija;
-import so.AbstractSO;
+import so.OpstaSO;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 /**
  *
  * @author Milena
  */
-public class SOAddRecenzija extends AbstractSO {
+public class SOAddRecenzija extends OpstaSO {
     @Override
     protected void validate(OpstiDomenskiObjekat ado) throws Exception {
         if (!(ado instanceof Recenzija)) {

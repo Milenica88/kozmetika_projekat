@@ -11,13 +11,13 @@ import domen.StavkaPorudzbine;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.Date;
-import so.AbstractSO;
+import so.OpstaSO;
 
 /**
  *
  * @author Milena
  */
-public class SOAddPorudzbina extends AbstractSO {
+public class SOAddPorudzbina extends OpstaSO {
     
     @Override
     protected void validate(OpstiDomenskiObjekat ado) throws Exception {

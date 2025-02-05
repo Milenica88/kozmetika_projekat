@@ -9,7 +9,6 @@ import formeStatistika.FrmNovaRecenzija;
 import javax.swing.JOptionPane;
 import modeli.TabelaModelKupci;
 
-
 /**
  *
  * @author Milena
@@ -169,20 +168,18 @@ public class FrmPretragaKupca extends javax.swing.JDialog {
     }//GEN-LAST:event_btnOtkaziActionPerformed
 
     private void btnOcenaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOcenaActionPerformed
-         TabelaModelKupci mt=(TabelaModelKupci) tblKupci.getModel();
-        int row=tblKupci.getSelectedRow();
-        if(row>=0){
-            JOptionPane.showMessageDialog(this,"Sistem je ucitao kupca");
-            Kupac k=mt.getSelectedKlijent(row);
+        TabelaModelKupci mt = (TabelaModelKupci) tblKupci.getModel();
+        int row = tblKupci.getSelectedRow();
+        if (row >= 0) {
+            JOptionPane.showMessageDialog(this, "Sistem je ucitao kupca");
+            Kupac k = mt.getSelectedKlijent(row);
             new FrmNovaRecenzija(this, true, k).setVisible(true);
+        } else {
+            JOptionPane.showMessageDialog(this, "Sistem ne moze da ucita kupca");
         }
-        else{
-            JOptionPane.showMessageDialog(this,"Sistem ne moze da ucita kupca");
-        }
-        
+
     }//GEN-LAST:event_btnOcenaActionPerformed
 
-    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnDetalji;
@@ -196,7 +193,7 @@ public class FrmPretragaKupca extends javax.swing.JDialog {
     // End of variables declaration//GEN-END:variables
 
     void refreshTable() {
-        TabelaModelKupci tm = (TabelaModelKupci) tblKupci.getModel();
+        TabelaModelKupci tm = (TabelaModelKupci) tblKupci.getModel();   
         tm.refreshTable();
     }
 }

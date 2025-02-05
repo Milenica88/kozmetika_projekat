@@ -8,13 +8,13 @@ import db.DBBroker;
 import domen.Kupac;
 import domen.OpstiDomenskiObjekat;
 import java.util.ArrayList;
-import so.AbstractSO;
+import so.OpstaSO;
 
 /**
  *
  * @author Milena
  */
-public class SOAddKupac extends AbstractSO {
+public class SOAddKupac extends OpstaSO {
 
     @Override
     protected void validate(OpstiDomenskiObjekat ado) throws Exception {

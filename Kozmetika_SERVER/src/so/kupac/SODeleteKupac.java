@@ -7,13 +7,13 @@ package so.kupac;
 import db.DBBroker;
 import domen.Kupac;
 import domen.OpstiDomenskiObjekat;
-import so.AbstractSO;
+import so.OpstaSO;
 
 /**
  *
  * @author Milena
  */
-public class SODeleteKupac extends AbstractSO {
+public class SODeleteKupac extends OpstaSO {
 
     @Override
     protected void validate(OpstiDomenskiObjekat ado) throws Exception {

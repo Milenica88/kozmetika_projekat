@@ -85,8 +85,8 @@ public class LoginForma extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
+                                .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(btnCancel))
                             .addComponent(txtUsername, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtPassword, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -144,7 +144,7 @@ public class LoginForma extends javax.swing.JFrame {
             this.dispose();
 
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(this, "Neuspesna prijava, molimo Vas pokusajte ponovo.");
+            //JOptionPane.showMessageDialog(this, "Neuspesna prijava, molimo Vas pokusajte ponovo.");
             JOptionPane.showMessageDialog(rootPane, e.getMessage());
             e.printStackTrace();
         }

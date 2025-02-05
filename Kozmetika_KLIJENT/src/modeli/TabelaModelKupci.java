@@ -5,6 +5,7 @@
 package modeli;
 
 import domen.Kupac;
+import formeKupca.FrmPretragaKupca;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -16,7 +17,8 @@ import kontroler.KlijentKontroler;
  * @author Milena
  */
 public class TabelaModelKupci extends AbstractTableModel implements Runnable {
-      private ArrayList<Kupac> lista;
+
+    private ArrayList<Kupac> lista;
     private String[] kolone = {"ID", "Ime", "Prezime", "Email", "Telefon"};
     private String parametar = "";
 

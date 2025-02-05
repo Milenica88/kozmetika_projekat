@@ -8,13 +8,13 @@ import db.DBBroker;
 import domen.OpstiDomenskiObjekat;
 import domen.Proizvod;
 import java.util.ArrayList;
-import so.AbstractSO;
+import so.OpstaSO;
 
 /**
  *
  * @author Milena
  */
-public class SOGetAllProizvod extends AbstractSO {
+public class SOGetAllProizvod extends OpstaSO {
     
      private ArrayList<Proizvod> listaProizvoda;
 

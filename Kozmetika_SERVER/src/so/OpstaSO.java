@@ -12,7 +12,7 @@ import java.sql.SQLException;
  *
  * @author Milena
  */
-public abstract class AbstractSO {
+public abstract class OpstaSO {
     
     protected abstract void validate(OpstiDomenskiObjekat ado) throws Exception;
     protected abstract void execute(OpstiDomenskiObjekat ado) throws Exception;

@@ -32,5 +32,4 @@ public interface Operacije {
 
     public static final int GET_ALL_RECENZIJA = 13;
     public static final int ADD_RECENZIJA = 14;
-    public static final int DELETE_RECENZIJA = 15;
 }

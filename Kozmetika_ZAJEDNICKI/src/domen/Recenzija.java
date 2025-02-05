@@ -14,7 +14,7 @@ import java.sql.SQLException;
  */
 public class Recenzija extends OpstiDomenskiObjekat {
 
-     private Long recenzijaID;
+    private Long recenzijaID;
     private Proizvod proizvod;
     private Kupac kupac;
     private int ocena;
@@ -87,7 +87,7 @@ public class Recenzija extends OpstiDomenskiObjekat {
 
     @Override
     public String vrednostiZaInsert() {
-        return  proizvod.getProizvodID() + ", "
+        return proizvod.getProizvodID() + ", "
                 + kupac.getKupacID() + ", " + ocena;
     }
 
@@ -132,6 +132,5 @@ public class Recenzija extends OpstiDomenskiObjekat {
     public void setOcena(int ocena) {
         this.ocena = ocena;
     }
-
 
 }

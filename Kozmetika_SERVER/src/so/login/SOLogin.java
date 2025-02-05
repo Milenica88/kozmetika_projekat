@@ -9,13 +9,13 @@ import domen.Administrator;
 import domen.OpstiDomenskiObjekat;
 import java.util.ArrayList;
 import kontroler.ServerKontroler;
-import so.AbstractSO;
+import so.OpstaSO;
 
 /**
  *
  * @author Milena
  */
-public class SOLogin extends AbstractSO {
+public class SOLogin extends OpstaSO {
     Administrator ulogovani;
 
     @Override

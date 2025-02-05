@@ -7,13 +7,13 @@ package so.porudzbina;
 import db.DBBroker;
 import domen.OpstiDomenskiObjekat;
 import domen.Porudzbina;
-import so.AbstractSO;
+import so.OpstaSO;
 
 /**
  *
  * @author Milena
  */
-public class SODeletePorudzbina extends AbstractSO {
+public class SODeletePorudzbina extends OpstaSO {
 
     @Override
     protected void validate(OpstiDomenskiObjekat ado) throws Exception {

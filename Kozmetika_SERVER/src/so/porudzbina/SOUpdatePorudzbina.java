@@ -9,13 +9,13 @@ import domen.OpstiDomenskiObjekat;
 import domen.Porudzbina;
 import domen.StavkaPorudzbine;
 import java.util.Date;
-import so.AbstractSO;
+import so.OpstaSO;
 
 /**
  *
  * @author Milena
  */
-public class SOUpdatePorudzbina extends AbstractSO {
+public class SOUpdatePorudzbina extends OpstaSO {
      @Override
     protected void validate(OpstiDomenskiObjekat ado) throws Exception {
         if (!(ado instanceof Porudzbina)) {

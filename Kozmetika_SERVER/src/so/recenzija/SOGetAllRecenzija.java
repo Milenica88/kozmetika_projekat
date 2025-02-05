@@ -8,13 +8,13 @@ import db.DBBroker;
 import domen.OpstiDomenskiObjekat;
 import domen.Recenzija;
 import java.util.ArrayList;
-import so.AbstractSO;
+import so.OpstaSO;
 
 /**
  *
  * @author Milena
  */
-public class SOGetAllRecenzija extends AbstractSO {
+public class SOGetAllRecenzija extends OpstaSO {
     private ArrayList<Recenzija> lista;
 
     @Override
